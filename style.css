@@ -48,10 +48,11 @@ body {
     display: block;
     color: transparent;
     -webkit-text-stroke: 1px var(--gold); /* Borde más fino (era 1.5px) */
-    font-size: 0.4em; /* Tamaño reducido (era proporcional al H1) */
+    font-size: 0.35em; /* Tamaño reducido (era proporcional al H1) */
     text-transform: uppercase;
-    letter-spacing: 10px; /* Más espacio entre letras para elegancia */
-    margin-top: 10px;
+    letter-spacing: 8px; /* Más espacio entre letras para elegancia */
+    margin-top: 5px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .badge {
