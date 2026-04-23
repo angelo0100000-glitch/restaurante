@@ -237,127 +237,136 @@ footer {
     margin: 20px 10px; /* Margen para que no toque los bordes del móvil */
 }
 
-/* 1. Adaptación para Tablets (iPad) */
+/* ============================================================
+   DISEÑO RESPONSIVE UNIFICADO (SMARTPHONES & TABLETS)
+   ============================================================ */
+
+/* 1. AJUSTES PARA TABLETS (iPads) */
 @media (max-width: 1024px) {
     .modern-grid {
-        grid-template-columns: repeat(3, 1fr) !important; 
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 15px !important;
-        padding: 20px;
     }
 }
 
-/* 2. Adaptación TOTAL para Smartphone (iPhone & Android) */
+/* 2. AJUSTES PARA CELULARES (iPhone, Samsung, etc.) */
 @media (max-width: 768px) {
     
-    /* Ajuste de márgenes globales para que nada se corte */
-    body {
-        overflow-x: hidden; /* Evita que la pantalla se mueva de lado a lado */
+    /* Evitar que la web se mueva hacia los lados */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
     }
 
-    /* Menú de platos: 2 columnas bien centradas */
-    .modern-grid {
-        grid-template-columns: repeat(2, 1fr) !important; 
-        gap: 10px !important;
-        padding: 10px !important;
-        width: 100%;
-        box-sizing: border-box;
+    /* Adaptación del HERO (Cabecera) */
+    .hero h1 {
+        font-size: 2.5rem !important; /* Nombre más pequeño para que no se corte */
+        padding: 0 10px;
     }
-    
-    .modern-card { 
-        padding: 8px !important; 
-        border-radius: 12px;
+
+    .hero .impact-phrase {
+        font-size: 1rem !important;
+        padding: 0 20px;
+    }
+
+    /* MENU DE COMIDA: 2 columnas perfectas */
+    .modern-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding: 15px !important;
+    }
+
+    .modern-card {
+        padding: 10px !important;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centra el contenido de la tarjeta */
+        align-items: center;
         text-align: center;
     }
 
-    .product-img-container { 
-        height: 110px !important; 
+    .product-img-container {
+        height: 100px !important; /* Altura ajustada para móviles */
         width: 100%;
-        border-radius: 8px;
     }
 
-    .modern-card h3 { 
-        font-size: 0.85rem !important; 
+    .modern-card h3 {
+        font-size: 0.85rem !important;
         margin: 8px 0 !important;
+        min-height: 35px; /* Alinea los títulos aunque tengan distinto largo */
     }
 
-    .price { 
-        font-size: 0.9rem !important; 
+    .modern-card p {
+        display: none; /* Ocultamos descripción en móvil para no saturar */
     }
 
-    /* Banner de Oferta Especial */
+    /* BANNER DE OFERTA */
     .offer-banner {
-        margin: 15px !important;
-        padding: 40px 20px !important;
-        min-height: 220px !important;
-        border-radius: 15px;
-        background-attachment: scroll !important; /* Mejor para rendimiento móvil */
+        margin: 20px 15px !important;
+        padding: 50px 20px !important;
+        min-height: auto !important;
     }
 
     .offer-banner h2 {
         font-size: 1.4rem !important;
     }
 
-    /* SECCIÓN UBICACIÓN Y CONTACTO */
+    /* SECCIÓN DE UBICACIÓN Y CONTACTO (CENTRADOS) */
     .location-container {
-        flex-direction: column !important;
+        flex-direction: column !important; /* Uno debajo del otro */
         align-items: center !important;
-        text-align: center !important;
+        padding: 20px !important;
         gap: 30px !important;
-        padding: 20px 10px !important;
     }
 
     .map-wrapper {
         width: 100% !important;
-        max-width: 320px !important; /* Mapa tamaño ideal para móvil */
+        max-width: 350px !important;
     }
 
     .map-image-small {
         width: 100% !important;
-        border-radius: 10px;
+        border-radius: 12px;
     }
 
     .contact-info {
         width: 100% !important;
+        text-align: center !important; /* Todo el texto al centro */
         color: #ffffff !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centra todos los textos de contacto */
     }
 
     .info-item {
-        margin-bottom: 20px !important;
-        width: 100%;
+        margin-bottom: 25px !important;
     }
 
     .info-item h3 {
-        justify-content: center; /* Centra iconos con texto */
+        justify-content: center !important; /* Centra el emoji con el título */
         font-size: 1.1rem !important;
+        color: #b8860b !important;
     }
 
     .info-item p {
+        color: #ffffff !important;
         font-size: 0.95rem !important;
-        margin: 4px 0 !important;
     }
 
-    /* Títulos de Secciones */
-    .section-title { 
-        font-size: 1.6rem !important; 
-        text-align: center;
+    /* FOOTER */
+    .footer-content {
+        padding: 30px 10px !important;
     }
 
-    /* Redes Sociales en el Footer */
     .social-links {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
         gap: 15px;
+        flex-wrap: wrap;
     }
 
     .social-links a {
-        padding: 10px 15px !important;
-        font-size: 0.85rem !important;
+        background: rgba(184, 134, 11, 0.15);
+        padding: 10px 18px !important;
+        border-radius: 8px;
+        font-size: 0.8rem !important;
+        text-decoration: none;
+        color: #b8860b !important;
     }
 }
